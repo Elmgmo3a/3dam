@@ -1,17 +1,11 @@
-<!-- Patient Id Field -->
 
-<div class="form-group col-sm-6">
-    {!! Form::label('patient_id', 'Patient Id:') !!}
-    {!! Form::text('patient_id', null, ['class' => 'form-control']) !!}
-</div>
 
-<!-- Doctorclinic Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('doctorclinic_id', 'Doctorclinic Id:') !!}
-    {!! Form::text('doctorclinic_id', null, ['class' => 'form-control']) !!}
-</div>
 
             <div class="col-md-6">
+			<div class="form-group">
+                {!! Form::label('patient_id', 'Patient Id:') !!}
+				{!! Form::text('patient_id', null, ['class' => 'form-control']) !!}
+            </div>
                  <div class="form-group">
                 <label>نوع الكشف </label>
                 <select class="form-control select2" style="width: 100%;">
@@ -48,10 +42,12 @@
               <!-- /.form-group -->
             </div>
 
-		   <div>
- 
-          من فضلك اضغط هنا للحجز  <a href="https://select2.github.io/">Select2 documentation</a> 
-        </div>	
+<!-- Doctorclinic Id Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('doctorclinic_id', 'Doctorclinic Id:') !!}
+    {!! Form::text('doctorclinic_id', null, ['class' => 'form-control']) !!}
+</div>
+		  	
 			
 <!-- Start Date Field -->
 <div class="form-group col-sm-6">
@@ -79,12 +75,12 @@
 
 <!-- Actual Start Time Field -->
 <div class="form-group col-sm-6">
-    {!! Form::hidden('actual_start_time', null, ['class' => 'form-control']) !!}
+    {!! Form::text('actual_start_time', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Actual End Time Field -->
 <div class="form-group col-sm-6">
-    {!! Form::hidden('actual_end_time', null, ['class' => 'form-control']) !!}
+    {!! Form::text('actual_end_time', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Status Field -->
@@ -100,7 +96,7 @@
         <div class="card-box">
             <h2>Reports</h2><br>
             <ul>
-                <label value="ay 7aga" action="null" @click="setComponent('daily')">Show Queue</label>
+                <label  @click="setComponent('daily')">Show Queue</label>
 
             </ul>
         </div>
@@ -112,10 +108,6 @@
     </div>
 </div>
 <div id='eeee'>
-<div>
-<taskdata>
-</taskdata>
-</div>
 
 <template id='queuelist'>
 <ul class="list-group">
