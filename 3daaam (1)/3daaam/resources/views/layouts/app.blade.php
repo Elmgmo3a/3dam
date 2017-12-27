@@ -178,8 +178,8 @@
 
 	
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script src="{{ asset('js/app.js') }}"></script>   
-	
+	<script src="{{ asset('js/app.js') }}"></script>
+	<script src="{{ asset('js/test.js') }}"></script>
     <!-- select2 -->	
 <script type="text/javascript" >
   

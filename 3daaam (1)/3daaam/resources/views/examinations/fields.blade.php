@@ -42,6 +42,9 @@
               <!-- /.form-group -->
             </div>
 
+			
+			
+			
 <!-- Doctorclinic Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('doctorclinic_id', 'Doctorclinic Id:') !!}
@@ -96,7 +99,7 @@
         <div class="card-box">
             <h2>Reports</h2><br>
             <ul>
-                <label  @click="setComponent('daily')">Show Queue</label>
+                <a id="example-2" v-on:click="showQueue">Show Queue</a>
 
             </ul>
         </div>
@@ -107,6 +110,10 @@
         </div>
     </div>
 </div>
+
+
+
+
 <div id='eeee'>
 
 <template id='queuelist'>

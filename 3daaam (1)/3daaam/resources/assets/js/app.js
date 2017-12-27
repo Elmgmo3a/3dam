@@ -4,11 +4,41 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+ import App from './App.vue';
+
+new Vue(Vue.util.extend({ router }, App)).$mount('#app');
+
 
 require('./bootstrap');
 require('./select2');
 
 window.Vue = require('vue');
+
+const routes = [
+  {
+      name: 'Example',
+      path: '/',
+      component: Example
+  }
+];
+
+const router = new VueRouter({ mode: 'history', routes: routes});
+new Vue(Vue.util.extend({ router }, App)).$mount('#app');
+
+
+var example2 = new Vue({
+  el: '#example-2',
+  
+  // define methods under the `methods` object
+  methods: {
+    showQueue: function (event) {
+      // `this` inside methods points to the Vue instance
+      alert('Hello ')
+      // `event` is the native DOM event
+      
+    }
+  }
+})
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -49,36 +79,13 @@ var app1 = new Vue({
 
 */
 
-Vue.component('taskdata', {
-	template : '#queuelist',
-	data : function(){
-	 return{
-		 datalist:["",""]
-	 };
-},
-	created: function(){
-		this.fetchTaskData();
-	},
-	methods:{
-		fetchTaskData:function(){
-			this.$http.get('recqueues/data', function(jsonArray){
-			this.datalist = jsonArray;
-		}.bind(this));
-		}
-	}
-	
-});
+
+
 new Vue({
-	el: '#eeee'
+	el: '#queuelist',
+	methods:{
+		select: function(event) {
+			alert(":S");
+		}
+    }
 });
-
-
-$(function () {
-    //Initialize Select2 Elements
-  $(".select2").select2();
-  
-  $('#datepicker').datepicker({
-      autoclose: true
-    });
-	
-	});
